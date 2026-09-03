@@ -1,4 +1,5 @@
 name: Build ExcelSmart Pro XLAM
+
 on:
   workflow_dispatch:
   push:
@@ -6,30 +7,39 @@ on:
     paths-ignore:
       - 'README.md'
 
-permissions:
-  contents: read
-  id-token: write
-  attestations: write
-
 jobs:
   build:
-    runs-on: windows-2025
+    runs-on: windows-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
-      - name: Setup VBA Runtime
-        uses: DecimalTurn/setup-vba@797e4a232699a98507cb4411d5bea3697427ad57
+        uses: actions/checkout@v4
+
+      - name: Preflight - show repo tree
+        shell: pwsh
+        run: |
+          Write-Host "=== ROOT ==="
+          Get-ChildItem -Force
+          Write-Host "=== SRC TREE ==="
+          Get-ChildItem -Recurse ./src | Select-Object FullName
+          if (!(Test-Path "./src/ExcelSmartPro.xlam")) { throw "Missing ./src/ExcelSmartPro.xlam" }
+          if (!(Test-Path "./src/ExcelSmartPro.xlam/XMLsource")) { throw "Missing XMLsource folder" }
+          if (!(Test-Path "./src/ExcelSmartPro.xlam/Modules")) { throw "Missing Modules folder" }
+
+      - name: Setup VBA runtime
+        uses: DecimalTurn/setup-vba@v0.3.0
         with:
-          office-apps: "Excel"
-          install-office: "true"
-          office-language: "en-US"
-      - name: Build VBA-Enabled Documents
-        id: build_vba
-        uses: DecimalTurn/VBA-Build@73d88e15e27d1e80aa402c60981175a491281d25
+          office-apps: Excel
+          install-office: true
+          office-language: en-US
+
+      - name: Build VBA-enabled documents
+        uses: DecimalTurn/VBA-Build@v2.0.0
         with:
-          source-dir: "./src"
+          source-dir: ./src
         timeout-minutes: 20
-      - name: Upload Build Artifacts
+
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ExcelSmartPro-XLAM
