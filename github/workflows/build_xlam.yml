@@ -1,0 +1,37 @@
+name: Build ExcelSmart Pro XLAM
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  build:
+    runs-on: windows-2025
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup VBA Runtime
+        uses: DecimalTurn/setup-vba@797e4a232699a98507cb4411d5bea3697427ad57
+        with:
+          office-apps: "Excel"
+          install-office: "true"
+          office-language: "en-US"
+      - name: Build VBA-Enabled Documents
+        id: build_vba
+        uses: DecimalTurn/VBA-Build@73d88e15e27d1e80aa402c60981175a491281d25
+        with:
+          source-dir: "./src"
+        timeout-minutes: 20
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ExcelSmartPro-XLAM
+          path: ./src/out/*
+          if-no-files-found: error
