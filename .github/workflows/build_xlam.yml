@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: windows-2025
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -24,6 +24,9 @@ jobs:
           office-apps: "Excel"
           install-office: "true"
           office-language: "en-US"
+
+      - name: Wait for Excel initialization
+        run: Start-Sleep -Seconds 30
 
       - name: Build VBA-Enabled Documents
         id: build_vba
