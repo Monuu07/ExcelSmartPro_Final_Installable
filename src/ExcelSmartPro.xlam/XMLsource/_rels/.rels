@@ -13,4 +13,3 @@
     Type="http://schemas.microsoft.com/office/2006/relationships/ui/extensibility"
     Target="customUI/customUI.xml"/>
 </Relationships>
-
