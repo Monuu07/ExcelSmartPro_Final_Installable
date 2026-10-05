@@ -3,65 +3,96 @@
   <ribbon>
     <tabs>
       <tab id="tabExcelSmartPro" label="ExcelSmart Pro">
+
         <group id="grpAI" label="AI Tools">
           <button id="btnAIFormulaGenerator" label="AI Formula Generator" size="large" imageMso="FunctionWizard" onAction="RunMacro"/>
           <button id="btnAIFormulaExplainer" label="AI Formula Explainer" imageMso="FormulaInsert" onAction="RunMacro"/>
-          <button id="btnAIFormulaErrorDetector" label="AI Formula Error Detector" imageMso="ReviewingPane" onAction="RunMacro"/>
-          <button id="btnAIPythonScriptGenerator" label="AI Python Script Generator" imageMso="HappyFace" onAction="RunMacro"/>
-          <button id="btnAICommentGenerator" label="AI Comment Generator" imageMso="ReviewNewComment" onAction="RunMacro"/>
+          <button id="btnAIFormulaErrorDetector" label="AI Formula Checker" imageMso="ReviewingPane" onAction="RunMacro"/>
+          <button id="btnAIPythonScriptGenerator" label="AI Python Script" imageMso="HappyFace" onAction="RunMacro"/>
+          <button id="btnAICommentGenerator" label="AI Comment" imageMso="ReviewNewComment" onAction="RunMacro"/>
+          <button id="btnAISettings" label="AI Settings" imageMso="DatabaseSettings" onAction="RunMacro"/>
         </group>
-        <group id="grpVisual" label="Highlights">
-          <button id="btnIncreaseColour" label="Increase Colour" onAction="RunMacro"/>
-          <button id="btnDecreaseColour" label="Decrease Colour" onAction="RunMacro"/>
-          <button id="btnRedHighlight" label="Red Highlight" onAction="RunMacro"/>
-          <button id="btnGreenHighlight" label="Green Highlight" onAction="RunMacro"/>
-          <button id="btnOrangeHighlight" label="Orange Highlight" onAction="RunMacro"/>
-          <button id="btnBlueHighlight" label="Blue Highlight" onAction="RunMacro"/>
-          <button id="btnClearHighlight" label="Clear Highlight" onAction="RunMacro"/>
-          <button id="btnChangeBorderColor" label="Change Border Color" onAction="RunMacro"/>
-          <button id="btnStatusTickmarks" label="Status Tickmarks" onAction="RunMacro"/>
+
+        <group id="grpText" label="Text Tools">
+          <button id="btnAddCharacters" label="Add Characters" onAction="RunMacro"/>
+          <button id="btnDeleteCharacters" label="Delete Characters" onAction="RunMacro"/>
+          <button id="btnCountCharacters" label="Count Characters" onAction="RunMacro"/>
+          <button id="btnSplitNames" label="Split Names" onAction="RunMacro"/>
+          <button id="btnFillBlankCells" label="Fill Blank Cells" onAction="RunMacro"/>
+          <button id="btnTrimText" label="Advanced Trim" onAction="RunMacro"/>
+          <button id="btnSplitByDelimiter" label="Split By Delimiter" onAction="RunMacro"/>
+          <button id="btnUpperCase" label="UPPERCASE" onAction="RunMacro"/>
+          <button id="btnLowerCase" label="lowercase" onAction="RunMacro"/>
+          <button id="btnProperCase" label="Proper Case" onAction="RunMacro"/>
         </group>
+
+        <group id="grpFilter" label="Filter and Find">
+          <button id="btnApplyFilterBySelection" label="Filter by Selection" size="large" imageMso="FilterApplySelection" onAction="RunMacro"/>
+          <button id="btnClearAllFilters" label="Clear All Filters" imageMso="FilterClear" onAction="RunMacro"/>
+          <button id="btnStartSmartHighlighter" label="Smart Highlighter" imageMso="HighlightColorPicker" onAction="RunMacro"/>
+          <button id="btnClearSmartHighlighter" label="Clear Highlights" imageMso="HighlightRemove" onAction="RunMacro"/>
+        </group>
+
+        <group id="grpFormatting" label="Highlights">
+          <button id="btnIncreaseColour" label="Lighter" imageMso="ColorPickerFill" onAction="RunMacro"/>
+          <button id="btnDecreaseColour" label="Darker" imageMso="ColorDarker" onAction="RunMacro"/>
+          <button id="btnRedHighlight" label="Red" imageMso="BackgroundColorPicker" onAction="RunMacro"/>
+          <button id="btnGreenHighlight" label="Green" imageMso="ColorGreen" onAction="RunMacro"/>
+          <button id="btnOrangeHighlight" label="Orange" onAction="RunMacro"/>
+          <button id="btnBlueHighlight" label="Blue" onAction="RunMacro"/>
+          <button id="btnClearHighlight" label="Clear" imageMso="ClearContents" onAction="RunMacro"/>
+          <button id="btnChangeBorderColor" label="Border Color" imageMso="BorderColorPicker" onAction="RunMacro"/>
+        </group>
+
         <group id="grpSheet" label="Sheet Manager">
-          <menu id="mnuTextOps" label="Text & Sheet Ops">
-            <button id="btnAddCharacters" label="Add Characters" onAction="RunMacro"/>
-            <button id="btnDeleteCharacters" label="Delete Characters" onAction="RunMacro"/>
-            <button id="btnCountCharacters" label="Count Characters" onAction="RunMacro"/>
-            <button id="btnSplitNames" label="Split Names" onAction="RunMacro"/>
-            <button id="btnFillBlankCells" label="Fill Blank Cells" onAction="RunMacro"/>
-            <button id="btnColumnHide" label="Column Hide" onAction="RunMacro"/>
-            <button id="btnColumnUnhide" label="Column Unhide" onAction="RunMacro"/>
-            <button id="btnUpperCase" label="UPPERCASE" onAction="RunMacro"/>
-            <button id="btnLowerCase" label="lowercase" onAction="RunMacro"/>
-            <button id="btnProperCase" label="Proper Case" onAction="RunMacro"/>
-          </menu>
-          <menu id="mnuSheetOps2" label="Workbook Ops">
-            <button id="btnAutoFitSheets" label="Auto-Fit Sheets" onAction="RunMacro"/>
-            <button id="btnHideSheets" label="Hide Sheets" onAction="RunMacro"/>
-            <button id="btnUnhideSheets" label="Unhide Sheets" onAction="RunMacro"/>
-            <button id="btnHideShapes" label="Hide Shapes" onAction="RunMacro"/>
-            <button id="btnUnhideShapes" label="Unhide Shapes" onAction="RunMacro"/>
-            <button id="btnSelectShapes" label="Select Shapes" onAction="RunMacro"/>
-            <button id="btnValuesToText" label="Values To Text Format" onAction="RunMacro"/>
-            <button id="btnDuplicateSheet" label="Duplicate Sheet" onAction="RunMacro"/>
-            <button id="btnSortAZ" label="Sort Sheets A-Z" onAction="RunMacro"/>
-            <button id="btnSortZA" label="Sort Sheets Z-A" onAction="RunMacro"/>
-            <button id="btnMonthlySheets" label="Monthly Sheets" onAction="RunMacro"/>
-            <button id="btnRemoveBlankRows" label="Remove Blank Rows" onAction="RunMacro"/>
-            <button id="btnRemoveBlankColumns" label="Remove Blank Columns" onAction="RunMacro"/>
-            <button id="btnRemoveBlankSheets" label="Remove Blank Sheets" onAction="RunMacro"/>
-          </menu>
+          <button id="btnCreateSheetIndex" label="Sheet Index" size="large" imageMso="InsertTableOfContents" onAction="RunMacro"/>
+          <button id="btnMergeSheets" label="Merge Sheets" imageMso="CombineUpdates" onAction="RunMacro"/>
+          <button id="btnUnpivotData" label="Unpivot" imageMso="DataConversionMenu" onAction="RunMacro"/>
+          <button id="btnAutoFitSheets" label="Auto-Fit Sheets" onAction="RunMacro"/>
+          <button id="btnHideSheets" label="Hide Sheets" onAction="RunMacro"/>
+          <button id="btnUnhideSheets" label="Unhide Sheets" onAction="RunMacro"/>
+          <button id="btnHideShapes" label="Hide Shapes" onAction="RunMacro"/>
+          <button id="btnUnhideShapes" label="Unhide Shapes" onAction="RunMacro"/>
+          <button id="btnSelectShapes" label="Select Shapes" onAction="RunMacro"/>
+          <button id="btnValuesToText" label="Values To Text" onAction="RunMacro"/>
+          <button id="btnDuplicateSheet" label="Duplicate Sheet" onAction="RunMacro"/>
+          <button id="btnSortAZ" label="Sort Sheets A-Z" onAction="RunMacro"/>
+          <button id="btnSortZA" label="Sort Sheets Z-A" onAction="RunMacro"/>
+          <button id="btnMonthlySheets" label="Monthly Sheets" onAction="RunMacro"/>
+          <button id="btnRemoveBlankRows" label="Remove Blank Rows" onAction="RunMacro"/>
+          <button id="btnRemoveBlankColumns" label="Remove Blank Columns" onAction="RunMacro"/>
+          <button id="btnRemoveBlankSheets" label="Remove Blank Sheets" onAction="RunMacro"/>
+          <button id="btnColumnHide" label="Column Hide" onAction="RunMacro"/>
+          <button id="btnColumnUnhide" label="Column Unhide" onAction="RunMacro"/>
         </group>
+
+        <group id="grpTick" label="Status Ticks">
+          <button id="btnStatusTickmarks" label="Green Tick" size="large" imageMso="CheckboxInsert" onAction="RunMacro"/>
+          <button id="btnTickRed" label="Red Cross" onAction="RunMacro"/>
+          <button id="btnTickQuestion" label="Question" onAction="RunMacro"/>
+          <button id="btnTickWarning" label="Warning" onAction="RunMacro"/>
+          <button id="btnTickStar" label="Star" onAction="RunMacro"/>
+          <button id="btnTickFlagRed" label="Red Flag" onAction="RunMacro"/>
+          <button id="btnTickFlagGreen" label="Green Flag" onAction="RunMacro"/>
+          <button id="btnTickFlagYellow" label="Yellow Flag" onAction="RunMacro"/>
+          <button id="btnTickClock" label="Clock" onAction="RunMacro"/>
+          <button id="btnTickPending" label="Pending" onAction="RunMacro"/>
+          <button id="btnTickInfo" label="Info" onAction="RunMacro"/>
+          <button id="btnTickLock" label="Lock" onAction="RunMacro"/>
+          <button id="btnTickBlocked" label="Blocked" onAction="RunMacro"/>
+          <button id="btnTick15" label="OK" onAction="RunMacro"/>
+          <button id="btnRemoveAllTicks" label="Remove All Ticks" onAction="RunMacro"/>
+          <button id="btnTickSettings" label="Tick Settings" onAction="RunMacro"/>
+        </group>
+
         <group id="grpProtection" label="Protection">
-          <button id="btnBackupFile" label="Backup File" onAction="RunMacro"/>
-          <button id="btnProtectSheets" label="Protect Sheets" onAction="RunMacro"/>
-          <button id="btnUnprotectSheets" label="Unprotect Sheets" onAction="RunMacro"/>
-          <button id="btnProtectWorkbook" label="Protect Workbook" onAction="RunMacro"/>
-          <button id="btnUnprotectWorkbook" label="Unprotect Workbook" onAction="RunMacro"/>
-          <button id="btnLockFormulas" label="Lock Formulas" onAction="RunMacro"/>
-          <button id="btnUnlockFormulas" label="Unlock Formulas" onAction="RunMacro"/>
-          <button id="btnLockSelection" label="Lock Selection" onAction="RunMacro"/>
-          <button id="btnUnlockSelection" label="Unlock Selection" onAction="RunMacro"/>
+          <button id="btnBackupFile" label="Backup File" imageMso="FileSave" onAction="RunMacro"/>
+          <button id="btnProtectSheets" label="Protect Sheets" imageMso="ReviewProtectSheet" onAction="RunMacro"/>
+          <button id="btnUnprotectSheets" label="Unprotect Sheets" imageMso="ReviewUnprotectSheet" onAction="RunMacro"/>
+          <button id="btnProtectWorkbook" label="Protect Workbook" imageMso="ReviewProtectWorkbook" onAction="RunMacro"/>
+          <button id="btnUnprotectWorkbook" label="Unprotect Workbook" imageMso="ReviewUnprotectWorkbook" onAction="RunMacro"/>
         </group>
+
         <group id="grpValidation" label="Validation Tools">
           <button id="btnEmailValidation" label="Email Validation" onAction="RunMacro"/>
           <button id="btnPhoneValidation" label="Phone Validation" onAction="RunMacro"/>
@@ -70,13 +101,35 @@
           <button id="btnURLValidation" label="URL Validation" onAction="RunMacro"/>
           <button id="btnDateValidation" label="Date Validation" onAction="RunMacro"/>
           <button id="btnRemoveValidation" label="Remove Validation" onAction="RunMacro"/>
+          <button id="btnValidateEmailData" label="Check Emails" onAction="RunMacro"/>
+          <button id="btnValidatePhoneData" label="Check Phones" onAction="RunMacro"/>
         </group>
+
         <group id="grpSmart" label="Smart Visual">
           <button id="btnSmartChart" label="Smart Chart" size="large" imageMso="ChartInsert" onAction="RunMacro"/>
           <button id="btnPowerDashboard" label="Power Dashboard" imageMso="PivotChartInsert" onAction="RunMacro"/>
-          <button id="btnSmartDataExporter" label="Smart Data Exporter" imageMso="FileSaveAsExcelXlsx" onAction="RunMacro"/>
-          <button id="btnMailAutomation" label="AI Automations" imageMso="MailMergeStartLetters" onAction="RunMacro"/>
+          <button id="btnExportAsJSON" label="Export JSON" imageMso="FileSaveAsOtherFormats" onAction="RunMacro"/>
+          <button id="btnExportAsHTML" label="Export HTML" imageMso="FileSaveAsWebPage" onAction="RunMacro"/>
         </group>
+
+        <group id="grpFiles" label="File Automation">
+          <button id="btnExportSheetsToPDF" label="Sheets To PDF" size="large" imageMso="FilePrint" onAction="RunMacro"/>
+          <button id="btnExportSheetsToWorkbooks" label="Sheets To Workbooks" imageMso="FileSaveAsExcelXlsx" onAction="RunMacro"/>
+          <button id="btnConvertAllCSVtoExcel" label="CSV To Excel" imageMso="FileOpenText" onAction="RunMacro"/>
+          <button id="btnGetFileNamesFromFolder" label="List Files In Folder" imageMso="FileOpenFolder" onAction="RunMacro"/>
+          <button id="btnSeparateFilesByType" label="Organize By Type" imageMso="FileNewFolder" onAction="RunMacro"/>
+          <button id="btnAutoFileOrganizer" label="Auto File Organizer" imageMso="FileSearch" onAction="RunMacro"/>
+          <button id="btnConvertWordPagesToPDFs" label="Word To PDF" onAction="RunMacro"/>
+        </group>
+
+        <group id="grpMail" label="Mail">
+          <button id="btnMailAutomation" label="Bulk Mailer (Outlook / Gmail)" size="large" imageMso="MailMergeStartLetters" onAction="RunMacro"/>
+        </group>
+
+        <group id="grpHelp" label="Help">
+          <button id="btnAbout" label="About" size="large" imageMso="Help" onAction="RunMacro"/>
+        </group>
+
       </tab>
     </tabs>
   </ribbon>
